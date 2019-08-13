@@ -8,7 +8,7 @@ public class Driver {
 	public static void main(String[] args) {
 		
 		TestCustomer testCustomer = new TestCustomer();
-		testCustomer.testValid();
+		testCustomer.testInvalid();
 		
 	}
 

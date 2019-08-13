@@ -34,12 +34,38 @@ public class TestCustomer {
 		
 		for (Customer customer : customers) {
 			System.out.println(customer.getDetails());
+			System.out.println(customer.toString());
 		}
 
 	}
 	
 	public void testInvalid() {
 		
+		Customer[] customers = {};
+		
+		Customer customer1 = new Customer("", "", "", "", "", "");
+		customers = Helpers.pushToCustomersArray(customers, customer1);
+		
+		Customer customer2 = new Customer("Rowan", "Atkinson", "91", "Sebastian Street", "Carlton", "abcd");
+		customers = Helpers.pushToCustomersArray(customers, customer2);
+		
+		Customer customer3 = new Customer("Jeremy", "Irons", "19", "John Close", "Essendon", "304");
+		customers = Helpers.pushToCustomersArray(customers, customer3);
+		
+		Customer customer4 = new Customer("Whoopi", "Goldberg", "57", "Elaine Court", "St Albans", "40211");
+		customers = Helpers.pushToCustomersArray(customers, customer4);
+		
+		Customer customer5 = new Customer("James", "Jones", "11", "Earl Road", "Melbourne", "0005");
+		customers = Helpers.pushToCustomersArray(customers, customer5);
+		
+		Customer customer6 = new Customer("Angelina", "Jolie", "11", "Smith Street", "Toorak", "9142");
+		customers = Helpers.pushToCustomersArray(customers, customer6);
+		
+		
+		for (Customer customer : customers) {
+			System.out.println(customer.getDetails());
+			System.out.println(customer.toString());
+		}
 	}
 
 }

@@ -27,20 +27,20 @@ public class Customer {
 	}
 	
 	public String getDetails() {
-		String details = "";
+		StringBuilder details = new StringBuilder();
 		
-		details += String.format("%-30s %s %s\n", "Name: ", firstName, lastName);
-		details += String.format("%-30s%s %s\n", "Address: ", streetNo, streetName, suburb, postcode);
+		details.append(String.format("%-30s %s %s\n", "Name: ", firstName, lastName));
+		details.append(String.format("%-30s%s %s\n", "Address: ", streetNo, streetName, suburb, postcode));
 		
-		return details;
+		return details.toString();
 	}
 	
 	public String toString() {
-		String details = "";
+		StringBuilder details = new StringBuilder();
 		
+		details.append(firstName + ":" + lastName + ":" + streetNo + ":" + streetName + ":" + suburb + ":" + postcode);
 		
-		
-		return details;
+		return details.toString();
 		
 	}
 }
