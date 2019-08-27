@@ -1,4 +1,4 @@
-package application;
+	package application;
 
 import utilities.Helpers;
 
@@ -30,7 +30,8 @@ public class Customer {
 		StringBuilder details = new StringBuilder();
 		
 		details.append(String.format("%-30s %s %s\n", "Name: ", firstName, lastName));
-		details.append(String.format("%-30s%s %s\n", "Address: ", streetNo, streetName, suburb, postcode));
+		details.append(String.format("%-30s %s %s\n", "Address: ", streetNo, streetName));
+		details.append(String.format("%-30s %s %s\n", "", suburb, postcode));
 		
 		return details.toString();
 	}

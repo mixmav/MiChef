@@ -34,7 +34,7 @@ public class TestCustomer {
 		
 		for (Customer customer : customers) {
 			System.out.println(customer.getDetails());
-			System.out.println(customer.toString());
+			System.out.println(customer.toString() + "\n\n\n");
 		}
 
 	}
@@ -64,7 +64,7 @@ public class TestCustomer {
 		
 		for (Customer customer : customers) {
 			System.out.println(customer.getDetails());
-			System.out.println(customer.toString());
+			System.out.println(customer.toString() + "\n\n\n");
 		}
 	}
 
