@@ -1,5 +1,7 @@
 package application;
 
+import utilities.Helpers;
+
 public class Meal {
 	
 	private String name;
@@ -9,9 +11,28 @@ public class Meal {
 	private double cost;
 	
 	public Meal(String name, MealCategory category, String[] ingredients, double cost) {
-		this.name = name;
+		this.name = Helpers.checkEmptyString(name);
 		this.category = category;
-		this.basicIngredients = ingredients;;
+		
+		if (ingredients.length < 2) {
+			ingredients = null;
+		}
+		
+		if (!Helpers.stringArrayContainDuplicates(ingredients)) {
+			ingredients = null;
+		}
+
+		if (ingredients != null) {
+			for (String ingredient : ingredients) {
+				if (ingredient != null) {
+					this.basicIngredients = Helpers.pushToStringArray(this.basicIngredients, ingredient);
+				}
+			}
+		}
+		
+		if (cost < 5) {
+			cost = -1;
+		}
 		this.cost = cost;
 	}
 	

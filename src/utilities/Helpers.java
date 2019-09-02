@@ -28,5 +28,25 @@ public class Helpers {
 
 		return customers;
 	}
+	
+	public static String[] pushToStringArray(String[] array, String value) {		
+		array = Arrays.copyOf(array, array.length + 1);
+		array[array.length - 1] = value;
 
+		return array;
+	}
+	
+	public static boolean stringArrayContainDuplicates(String[] array) {
+		boolean duplicates = false;
+		
+		for (int j = 0; j < array.length; j++) {
+			for (int k = j+1; k < array.length; k++) {
+				if (k != j && array[k] == array[j]) {
+					duplicates = true;	
+				}	
+			}	
+		}	
+		return true;
+	}
+	
 }
