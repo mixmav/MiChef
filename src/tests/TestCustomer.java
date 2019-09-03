@@ -32,10 +32,7 @@ public class TestCustomer {
 		Customer customer8 = new Customer("Matt", "Bomer", "42", "Station Street", "South Yarra", "8141");
 		customers = Helpers.pushToCustomersArray(customers, customer8);
 		
-		for (Customer customer : customers) {
-			System.out.println(customer.getDetails());
-			System.out.println(customer.toString() + "\n\n\n");
-		}
+		this.printDetails(customers);
 
 	}
 	
@@ -62,6 +59,10 @@ public class TestCustomer {
 		customers = Helpers.pushToCustomersArray(customers, customer6);
 		
 		
+		this.printDetails(customers);
+	}
+	
+	private void printDetails(Customer[] customers) {
 		for (Customer customer : customers) {
 			System.out.println(customer.getDetails());
 			System.out.println(customer.toString() + "\n\n\n");

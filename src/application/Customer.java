@@ -36,6 +36,11 @@ public class Customer {
 		return details.toString();
 	}
 	
+	public String getName() {
+		return this.firstName + " " + this.lastName;
+	}
+	
+	@Override
 	public String toString() {
 		StringBuilder details = new StringBuilder();
 		

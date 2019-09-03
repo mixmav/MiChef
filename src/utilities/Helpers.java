@@ -1,10 +1,10 @@
 package utilities;
 
 import java.util.Arrays;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import application.Customer;
+import application.Meal;
 
 public class Helpers {	
 	
@@ -29,11 +29,44 @@ public class Helpers {
 		return customers;
 	}
 	
+	public static Meal[] pushToMealsArray(Meal[] meals, Meal meal) {		
+		meals = Arrays.copyOf(meals, meals.length + 1);
+		meals[meals.length - 1] = meal;
+
+		return meals;
+	}
+	
 	public static String[] pushToStringArray(String[] array, String value) {		
 		array = Arrays.copyOf(array, array.length + 1);
 		array[array.length - 1] = value;
 
 		return array;
+	}
+	public static boolean stringArrayContains(String[] array, String value) {
+	    for (String s: array) {
+	        if (s.equalsIgnoreCase(value)) {
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
+	
+	
+	public static String[] pullFromStringArray(String[] array, String value) {
+		if (stringArrayContains(array, value)) {
+			String[] newArray = {};
+
+			for (String string : array) {
+				if (!string.equalsIgnoreCase(value)) {
+					newArray = pushToStringArray(newArray, string);
+				}
+			}
+
+			return newArray;
+		} else {
+			return array;
+		}
 	}
 	
 	public static boolean stringArrayContainDuplicates(String[] array) {
@@ -41,12 +74,12 @@ public class Helpers {
 		
 		for (int j = 0; j < array.length; j++) {
 			for (int k = j+1; k < array.length; k++) {
-				if (k != j && array[k] == array[j]) {
+				if (k != j && array[k].equalsIgnoreCase(array[j])) {
 					duplicates = true;	
 				}	
 			}	
 		}	
-		return true;
+		return duplicates;
 	}
 	
 }
